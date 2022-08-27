@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --red: #ED6B5B;
+  --dlack: #3A3E59;
+  --fiolet: #7D50B9;
+  --blue-light: #4FA3A5; 
+  --blue: #63C5EA;
+  --pink: #F2CACB;
+  --light-sweet: #ECE6CE;
+  --dark-sweet: #F9AC66;
+}
+
+@keyframes background-animate {
+  0% {
+    background: var(--blue);
+  }
+  20% {
+    background: var(--blue-light);
+  }
+  40% {
+    background: var(--fiolet);
+  }
+  60% {
+    background: var(--light-sweet);
+  }
+  80% {
+    background: var(--pink);
+  }
+  100% {
+    background: var(--blue);
+  }
+}
+body {
+  font-family: 'DynaPuff', cursive;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  animation: background-animate 15s linear infinite;
+  -webkit-animation: background-animate 15s linear infinite;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+  gap: 20px;
+ 
+}
+
+.slide {
+  flex: 1;
+  height: 80vh;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  position: relative;
+  box-shadow: 0 0 4px 0 var(--fiolet);
+  transition: all 800ms cubic-bezier(0.8,0,0.33,1);
+  -webkit-transition: all 800ms cubic-bezier(0.8,0,0.33,1);
+  -moz-transition: all 800ms cubic-bezier(0.8,0,0.33,1);
+  -ms-transition: all 800ms cubic-bezier(0.8,0,0.33,1);
+  -o-transition: all 800ms cubic-bezier(0.8,0,0.33,1);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slide h3 {
+  color: var(--dlack);
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  text-shadow: -7px 7px  3px var(--fiolet);
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  -webkit-transition: opacity 300ms ease-in;
+  -moz-transition: opacity 300ms ease-in;
+  -ms-transition: opacity 300ms ease-in;
+  -o-transition: opacity 300ms ease-in;
+}
+.slide.active {
+  flex: 10;
+}
+.slide.active h3 {
+  opacity: 1;
+}
